@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plataforma de Reserva de Evaluación de Dispositivos Digitales</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .header { background-color: #ffffff; }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+<!-- Navegación superior -->
+<header class="header text-black shadow">
+  <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+    <h1 class="text-2xl font-bold"><img src="LOGO.png" width="444" height="193" alt="Logo"></h1>
+    <nav>
+      <ul class="flex space-x-6 text-sm font-medium">
+        <li><a href="index.html" class="hover:underline">Proceso</a></li>
+        <!-- Resumen de actividades con menú desplegable -->
+        <li class="relative group">
+          <button class="hover:underline focus:outline-none">Resumen de actividades</button>
+          <ul class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
+            <li><a href="Proceso-Deteccion.html" class="block px-4 py-2 hover:bg-gray-100">Revisión de móviles</a></li>
+            <li><a href="Proceso-Reciclaje.html" class="block px-4 py-2 hover:bg-gray-100">Reciclaje de móviles</a></li>
+            <li><a href="Precio.html" class="block px-4 py-2 hover:bg-gray-100">Precio</a></li>
+            <li><a href="Opiniones de nuestros clientes.html" class="block px-4 py-2 hover:bg-gray-100">Opiniones</a></li>
+          </ul>
+        </li>
+        <!-- Centro de usuarios con menú desplegable -->
+        <li class="relative group">
+          <button class="hover:underline focus:outline-none">Centro de usuarios</button>
+          <ul class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
+            <li><a href="Centro de usuarios-User.html" class="block px-4 py-2 hover:bg-gray-100">Información del usuario</a></li>
+            <li><a href="Centro de usuarios-History.html" class="block px-4 py-2 hover:bg-gray-100">Historial de servicios</a></li>
+          </ul>
+        </li>
+        <li><a href="F&Q.html" class="hover:underline">F&Q</a></li>
+        <!-- Nuevo menú desplegable: Nuestra empresa -->
+        <li class="relative group">
+          <button class="hover:underline focus:outline-none">Nuestra empresa</button>
+          <ul class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
+            <li><a href="Foto del empresa.html" class="block px-4 py-2 hover:bg-gray-100">Foto del empresa</a></li>
+            <li><a href="Contáctenos.html" class="block px-4 py-2 hover:bg-gray-100">Contáctenos</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="bg-green-600 text-white py-16 text-center">
+  <div class="container mx-auto px-4">
+    <h1 class="text-4xl font-bold mb-4">Conoce nuestra empresa</h1>
+    <div class="max-w-2xl mx-auto">
+      <p class="text-lg mb-6">Espacios certificados, tecnología avanzada y un equipo comprometido con la economía circular</p>
+    </div>
+  </div>
+</section>
+
+<!-- Galería de la empresa -->
+<section id="galeria" class="container mx-auto px-4 py-16">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-12">Nuestra empresa en imágenes</h2>
+    
+    <!-- 照片网格 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- 办公环境 -->
+      <div class="group relative">
+        <img 
+          src="oficina.jpg" 
+          alt="Oficinas centrales en Burgos" 
+          class="w-full h-64 object-cover rounded-lg shadow-lg transition-transform group-hover:scale-105"
+          loading="lazy"
+        >
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity rounded-lg"></div>
+        <span class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+          📍 Sede central - Burgos
+        </span>
+      </div>
+
+      <!-- 检测实验室 -->
+      <div class="group relative">
+        <img 
+          src="laboratorio.jpg" 
+          alt="Laboratorio de pruebas certificado" 
+          class="w-full h-64 object-cover rounded-lg shadow-lg transition-transform group-hover:scale-105"
+          loading="lazy"
+        >
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity rounded-lg"></div>
+        <span class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+          🔍 Laboratorio AEQ certificado
+        </span>
+      </div>
+
+      <!-- 团队照片 -->
+      <div class="group relative">
+        <img 
+          src="equipo.jpg" 
+          alt="Nuestro equipo técnico" 
+          class="w-full h-64 object-cover rounded-lg shadow-lg transition-transform group-hover:scale-105"
+          loading="lazy"
+        >
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity rounded-lg"></div>
+        <span class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+          👥 Equipo especializado
+        </span>
+      </div>
+
+      <!-- 合作展示 -->
+      <div class="group relative">
+        <img 
+          src="colaboracion.jpg" 
+          alt="Colaboración con Wallapop" 
+          class="w-full h-64 object-cover rounded-lg shadow-lg transition-transform group-hover:scale-105"
+          loading="lazy"
+        >
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity rounded-lg"></div>
+        <span class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+          🤝 Certificación con Wallapop
+        </span>
+      </div>
+    </div>
+
+    <!-- 描述文字 -->
+    <div class="mt-12 bg-white p-8 rounded-lg shadow-lg">
+      <h3 class="text-xl font-semibold mb-4">Sobre nuestras instalaciones</h3>
+      <p class="text-gray-600 leading-relaxed">
+        Contamos con 1,200㎡ de instalaciones certificadas en el centro de Burgos, incluyendo:
+      <ul class="list-disc pl-6 mt-2 space-y-2">
+          <li>3 laboratorios de prueba con equipos de última generación</li>
+          <li>Zona de recepción y evaluación inicial de dispositivos</li>
+          <li>Área de desmontaje ecológico certificado WEEE</li>
+          <li>Centro de formación para técnicos especializados</li>
+      </ul>
+      </p>
+    </div>
+  </div>
+</section>
+ 
+</body>
+</html>
