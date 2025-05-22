@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plataforma de Reserva de Evaluación de Dispositivos Digitales</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .header { background-color: #ffffff; }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+<!-- Navegación superior -->
+<header class="header text-black shadow">
+  <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+    <h1 class="text-2xl font-bold"><img src="LOGO.png" width="444" height="193" alt="Logo"></h1>
+    <nav>
+      <ul class="flex space-x-6 text-sm font-medium">
+        <li><a href="Index.html" class="hover:underline">Proceso</a></li>
+        <!-- Resumen de actividades con menú desplegable -->
+        <li class="relative group">
+          <button class="hover:underline focus:outline-none">Resumen de actividades</button>
+          <ul class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
+            <li><a href="Proceso-Deteccion.html" class="block px-4 py-2 hover:bg-gray-100">Revisión de móviles</a></li>
+            <li><a href="Proceso-Reciclaje.html" class="block px-4 py-2 hover:bg-gray-100">Reciclaje de móviles</a></li>
+            <li><a href="Precio.html" class="block px-4 py-2 hover:bg-gray-100">Precio</a></li>
+            <li><a href="Opiniones de nuestros clientes.html" class="block px-4 py-2 hover:bg-gray-100">Opiniones</a></li>
+          </ul>
+        </li>
+        <!-- Centro de usuarios con menú desplegable -->
+        <li class="relative group">
+          <button class="hover:underline focus:outline-none">Centro de usuarios</button>
+          <ul class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
+            <li><a href="Centro de usuarios-User.html" class="block px-4 py-2 hover:bg-gray-100">Información del usuario</a></li>
+            <li><a href="Centro de usuarios-History.html" class="block px-4 py-2 hover:bg-gray-100">Historial de servicios</a></li>
+          </ul>
+        </li>
+        <li><a href="F&Q.html" class="hover:underline">F&Q</a></li>
+        <!-- Nuevo menú desplegable: Nuestra empresa -->
+        <li class="relative group">
+          <button class="hover:underline focus:outline-none">Nuestra empresa</button>
+          <ul class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
+            <li><a href="Foto del empresa.html" class="block px-4 py-2 hover:bg-gray-100">Foto del empresa</a></li>
+            <li><a href="Contáctenos.html" class="block px-4 py-2 hover:bg-gray-100">Contáctenos</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- Hero -->
+<section class="bg-green-600 text-white py-12 text-center"> 
+  <div class="container mx-auto px-4">
+    <h1 class="text-4xl font-bold mb-4">Preguntas Frecuentes (FAQ)</h1>
+    <p class="text-lg mb-4">Encuentra respuestas rápidas a las consultas más comunes...</p>
+    <p class="text-sm opacity-90">¿No encuentras lo que buscas? <a href="Contáctenos.html" class="underline hover:text-green-200">Contáctanos</a>.</p>
+  </div>
+</section>
+
+  <!-- Certificaciones -->
+  <section id="qualifications" class="container mx-auto px-4 py-16 mt-8">
+    <div class="bg-white p-8 rounded-lg shadow space-y-6">
+      <h3><strong>Preguntas frecuentes</strong></h3>
+      <h4><strong>📅 Acerca del Proceso de Reserva</strong></h4>
+      <ol start="1">
+        <li>
+          <p><strong>¿Cómo reservar una evaluación del equipo?</strong><br>
+            En la interfaz «Revisión de móviles», seleccione su ciudad, punto de prueba, marca y modelo del dispositivo, y elija la forma de entrega (recogida a domicilio, mensajería o entrega en persona).</p>
+        </li>
+        <li>Por último, confirme la fecha y la hora para completar la reserva.</li>
+        <li>
+          <p>&nbsp;</p>
+        </li>
+        <li>
+          <p><strong>¿Se puede modificar o cancelar una reserva?</strong><br>
+            Sí, puede modificar o cancelar su reserva hasta 24 horas antes de la fecha de la cita a través del «Centro de usuario». Las cancelaciones realizadas fuera de este plazo pueden incurrir en gastos parciales.</p>
+        </li>
+      </ol>
+      <hr>
+      <h4><strong>💳Pagos y Tarifas</strong></h4>
+      <ol start="1">
+        <li>
+          <p><strong>¿Qué métodos de pago aceptamos?</strong><br>
+            Aceptamos tarjetas de crédito (Visa/Mastercard), PayPal y transferencias bancarias. El pago se puede realizar una vez confirmada la inicio del servicio.</p>
+        </li>
+        <li>
+          <p>&nbsp;</p>
+        </li>
+        <li>
+          <p><strong>¿El cliente debe pagar los gastos de envío?</strong><br>
+            La recogida a domicilio y la entrega en persona no tienen ningún coste adicional. Si eliges el servicio de mensajería, deberás pagar los gastos de envío según la distancia. Los detalles de los costes se indican en Precio.</p>
+        </li>
+      </ol>
+      <hr>
+      <h4><strong>📝 Acerca del Informe de Evaluación</strong></h4>
+      <ol start="1">
+        <li>
+          <p><strong>¿Este informe de calidad es válido para la garantía oficial?</strong><br>
+            Sí, el informe está certificado por la Asociación Española de Calidad Electrónica (AEQ) y es válido para reclamaciones de garantía oficial o transacciones de segunda mano (como WALLAPOP).。</p>
+        </li>
+        <li>
+          <p>&nbsp;</p>
+        </li>
+        <li>
+          <p><strong>¿Cuánto tiempo se tarda en generar el informe?</strong><br>
+            Suele tardar 1 día laborable. Puede comprobar el progreso actual en el «Historial de servicios».</p>
+        </li>
+      </ol>
+      <hr>
+      <h4><strong>🔒 Cooperación y Seguridad</strong></h4>
+      <ol start="1">
+        <li>
+          <p><strong>¿Cómo puedo encontrar vuestros servicios en WALLAPOP?</strong><br>
+            Después de comprar un dispositivo a través de WALLAPOP, puede seleccionar el «servicio de inspección previa».Evaluaremos el estado del dispositivo antes de que lo reciba para garantizar que coincide con la descripción del vendedor.</p>
+        </li>
+        <li>
+          <p>&nbsp;</p>
+        </li>
+        <li>
+          <p><strong>¿Está segura la información personal de los clientes?</strong><br>
+            Sí, cumplimos con la norma de seguridad de la información ISO/IEC 27001 y prohibimos a nuestros empleados revisar los archivos privados de su dispositivo. </p>
+        </li>
+        <li>
+          <p>Si nos vende un dispositivo usado, borraremos todo el contenido del dispositivo tan pronto como lo recibamos.</p>
+        </li>
+      </ol>
+      <hr>
+      <h4><strong>🛠️ Otros problemas</strong></h4>
+      <ol start="1">
+        <li>
+          <p><strong>¿Cómo puedo consultar el estado de mi pedido?</strong><br>
+            En la página «Historial de servicios» puede consultar el progreso actual.</p>
+        </li>
+        <li>
+          <p>&nbsp;</p>
+        </li>
+        <li>
+          <p><strong>¿Qué hacer si surge algún problema?</strong><br>
+            Puede rellenar el formulario de solicitud directamente en «Contáctenos» o enviarnos un correo electrónico.</a>。</p>
+        </li>
+      </ol>
+      <br>
+      <h4 class="font-semibold text-lg mb-2">&nbsp;</h4>
+    </div>
+</section>
+
+  <!-- Pie de página -->
+  <footer class="bg-gray-800 text-gray-200 py-8">
+    <div class="container mx-auto px-4 text-center space-y-2">
+      <p>© 2025 Plataforma de Reserva de Evaluación de Dispositivos Digitales. Todos los derechos reservados.</p>
+      <p>Contacto: ztx1002@alu.ubu.es | Teléfono: +34 900 123 456</p>
+    </div>
+  </footer>
+
+  <!-- Lógica dinámica -->
+  <script>
+    const modelsByBrand = {
+      apple: ['iPhone 14', 'iPhone 13', 'iPhone 12', 'iPhone 11', 'iPhone X', 'Otros'],
+      samsung: ['Galaxy S23', 'Galaxy S22', 'Galaxy S21', 'Galaxy S20', 'Galaxy S10', 'Otros'],
+      huawei: ['P50', 'P40', 'P30', 'Mate 40', 'Mate 30', 'Otros'],
+      xiaomi: ['Mi 11', 'Mi 10', 'Redmi K40', 'Redmi K30', 'Otros'],
+      google: ['Pixel 7', 'Pixel 6', 'Pixel 5', 'Otros'],
+      oneplus: ['OnePlus 11', 'OnePlus 10', 'OnePlus 9', 'Otros'],
+      sony: ['Xperia 1 V', 'Xperia 5 III', 'Otros']
+    };
+
+    const locationsByCity = {
+      madrid: [
+        { addr: 'Plaza de España, 28008 Madrid' },
+        { addr: 'Plaza Mayor, 28012 Madrid' }
+      ],
+      barcelona: [
+        { addr: 'Plaça d’Espanya, 08014 Barcelona' },
+        { addr: 'Plaça Major, 08002 Barcelona' }
+      ],
+      valencia: [
+        { addr: 'Plaça d’Espanya, 46010 Valencia' },
+        { addr: 'Plaça Major, 46001 Valencia' }
+      ],
+      sevilla: [
+        { addr: 'Av. de Isabel la Católica, 41004 Sevilla' },
+        { addr: 'Plaza Mayor, 41001 Sevilla' }
+      ],
+      zaragoza: [
+        { addr: 'Plaza de España, 50001 Zaragoza' },
+        { addr: 'Plaza Mayor, 50001 Zaragoza' }
+      ],
+      malaga: [
+        { addr: 'Plaza de España, 29002 Málaga' },
+        { addr: 'Plaza Mayor, 29015 Málaga' }
+      ]
+    };
+
+    document.getElementById('brand').addEventListener('change', function() {
+      const modelSelect = document.getElementById('model');
+      modelSelect.innerHTML = '<option value="">Seleccione modelo</option>';
+      (modelsByBrand[this.value] || []).forEach(m => {
+        const opt = document.createElement('option');
+        opt.value = m.toLowerCase().replace(/\s+/g, '');
+        opt.textContent = m;
+        modelSelect.appendChild(opt);
+      });
+    });
+
+    document.getElementById('city').addEventListener('change', function() {
+      const locSelect = document.getElementById('location');
+      locSelect.innerHTML = '<option value="">Seleccione punto de prueba</option>';
+      (locationsByCity[this.value] || []).forEach(loc => {
+        const opt = document.createElement('option');
+        opt.value = loc.addr;
+        opt.textContent = loc.addr;
+        locSelect.appendChild(opt);
+      });
+    });
+  </script>
+
+
+<script>
+// Dinámica: cuando marca = "otros", modelo es campo de texto
+document.getElementById('brand').addEventListener('change', function() {
+  const container = document.getElementById('model-container');
+  if (this.value === 'otros') {
+    container.innerHTML = '<input type="text" id="model" name="model" required placeholder="Ingrese modelo" class="w-full border border-gray-300 p-2 rounded" />';
+  } else {
+    // Restaurar select original
+    container.innerHTML = `<select id="model" name="model" required class="w-full border border-gray-300 p-2 rounded">
+      <option value="">Seleccione modelo</option>
+    </select>`;
+    const opts = modelsByBrand[this.value] || [];
+    const select = document.getElementById('model');
+    opts.forEach(m => {
+      const opt = document.createElement('option');
+      opt.value = m.toLowerCase().replace(/\s+/g, '');
+      opt.textContent = m;
+      select.appendChild(opt);
+    });
+  }
+});
+</script>
+
+
+<script>
+// Fix navigation for Paso 2
+document.getElementById('book-next-2').addEventListener('click', function(event) {
+  event.preventDefault();
+  showBookStep(3);
+});
+document.getElementById('book-back-2').addEventListener('click', function(event) {
+  event.preventDefault();
+  showBookStep(1);
+});
+</script>
+
+
+<script>
+// Fix navigation for Paso 3
+document.getElementById('book-next-3').addEventListener('click', function(event) {
+  event.preventDefault();
+  showBookStep(4);
+});
+document.getElementById('book-back-3').addEventListener('click', function(event) {
+  event.preventDefault();
+  showBookStep(2);
+});
+</script>
+
+
+<script>
+// 强制绑定 Volver al inicio 到 showBookStep(1)
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.getElementById('book-home');
+  if (btn) {
+    btn.type = 'button';
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      showBookStep(1);
+    });
+  }
+});
+</script>
+
+</body>
+</html>
