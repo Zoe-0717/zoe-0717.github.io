@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-GO! | Helados Monumentales de Burgos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --burgundy: #800020;
+            --chocolate: #3C1321;
+            --cream: #FFF8F0;
+            --gold: #D4AF37;
+            --dark-gold: #B8860B;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            background-color: var(--cream);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: rgba(255, 248, 240, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 2.2rem;
+            color: var(--burgundy);
+            margin-left: 10px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+        
+        .logo-icon {
+            color: var(--gold);
+            font-size: 2.5rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--chocolate);
+            font-weight: 700;
+            font-size: 1.1rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--burgundy);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('https://mediaim.expedia.com/destination/1/283d4924096192ad8c7f39a0bd3fe8e7.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero h2 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--chocolate);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            border-color: var(--gold);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Sections */
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--burgundy);
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--gold);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Our Story */
+        .story-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .story-text {
+            flex: 1;
+        }
+        
+        .story-text h3 {
+            color: var(--chocolate);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .story-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.5s ease;
+        }
+        
+        .story-image:hover {
+            transform: scale(1.03);
+        }
+        
+        .story-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Landmark Products */
+        .products {
+            background-color: #f9f5f0;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            height: 250px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f0e6;
+        }
+        
+        .product-img img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .product-info h3 {
+            color: var(--burgundy);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .product-info p {
+            color: var(--chocolate);
+            margin-bottom: 15px;
+        }
+        
+        /* Store Info - 修改后的样式 */
+        .store-container {
+            display: flex;
+            justify-content: center; /* 居中显示 */
+        }
+        
+        .store-hours {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px; /* 限制最大宽度 */
+            width: 100%; /* 宽度100% */
+        }
+        
+        .store-hours h3 {
+            color: var(--burgundy);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            text-align: center; /* 标题居中 */
+        }
+        
+        .hours-list {
+            list-style: none;
+        }
+        
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+        
+        .open {
+            background-color: #4CAF50;
+        }
+        
+        .closed {
+            background-color: #F44336;
+        }
+        
+        /* Contact */
+        .contact {
+            background-color: #f9f5f0;
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            color: var(--burgundy);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .contact-details {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .contact-details li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-details i {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            width: 30px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--burgundy);
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--gold);
+            transform: translateY(-5px);
+        }
+        
+        .contact-form {
+            flex: 1;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: var(--chocolate);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Lato', sans-serif;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--chocolate);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            flex: 1;
+        }
+        
+        .footer-logo h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--gold);
+        }
+        
+        .footer-links {
+            flex: 1;
+        }
+        
+        .footer-links h4 {
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        /* 历史页面新增样式 */
+        .history {
+            background-color: #f9f5f0;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background-color: var(--gold);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+        
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--burgundy);
+            border: 3px solid var(--gold);
+            top: 30px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-content h3 {
+            color: var(--burgundy);
+            margin-bottom: 15px;
+        }
+        
+        @media (max-width: 992px) {
+            .story-content,
+            .store-container,
+            .contact-container,
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .hero h2 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+                left: 0 !important;
+            }
+            
+            .timeline-item:nth-child(even)::after,
+            .timeline-item:nth-child(odd)::after {
+                left: 21px;
+            }
+            
+            .store-hours {
+                padding: 25px;
+            }
+            
+            .logo h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-ice-cream logo-icon"></i>
+                    <h1>B-GO!</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#story">Nuestra Historia</a></li>
+                    <!-- 新增历史链接 -->
+                    <li><a href="#history">Historia de Burgos</a></li>
+                    <li><a href="#products">Productos</a></li>
+                    <li><a href="#store">Tienda</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Monumentos de Burgos en tu Paladar</h2>
+            <p>Helados y chocolates artesanales con forma de monumentos, tradición centenaria de Burgos</p>
+            <a href="#products" class="btn">Explora Nuestros Productos</a>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="story">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestra Historia</h2>
+            </div>
+            <div class="story-content">
+                <div class="story-text">
+                    <h3>Una Tradición Dulce desde 1925</h3>
+                    <p>B-GO! comenzó en 1925, fundado por Antonio Martínez. Inspirado por la majestuosa Catedral de Burgos, Antonio creó el primer helado con forma de monumento de la ciudad, causando sensación en la comunidad local.</p>
+                    <p>Durante casi un siglo, hemos mantenido la elaboración artesanal, utilizando leche local de primera calidad y chocolate belga importado. Cada producto es una obra de arte comestible. Cada palo de helado lleva grabado un monumento de Burgos, permitiéndote saborear la historia y cultura de esta ciudad.</p>
+                    <p>Hoy, María Martínez, cuarta generación de la familia, preserva las técnicas tradicionales mientras innova en sabores y diseños, dando nueva vida a este dulce patrimonio burgalés.</p>
+                </div>
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Elaboración artesanal de helados">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 历史介绍部分（无图片） -->
+    <section id="history" class="history">
+        <div class="container">
+            <div class="section-title">
+                <h2>Historia de Burgos</h2>
+            </div>
+            
+            <div class="timeline">
+                <!-- 时间线项目 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Siglo IX: Orígenes de la Ciudad</h3>
+                        <p>Burgos fue fundada en el año 884 por el conde Diego Rodríguez Porcelos como fortaleza defensiva contra los moros. Su ubicación estratégica en la confluencia de los ríos Arlanzón y Vena la convirtió en un importante bastión.</p>
+                    </div>
+                </div>
+                
+                <!-- 时间线项目 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Siglos XIII-XV: La Edad de Oro</h3>
+                        <p>En 1221, el rey Fernando III puso la primera piedra de la Catedral de Burgos, joya del gótico español. Burgos se convirtió en capital del Reino de Castilla y un próspero centro comercial gracias al comercio de lana.</p>
+                        <p>El Cid Campeador, héroe castellano, se convirtió en figura legendaria de Burgos durante este periodo. Su tumba se encuentra en la catedral.</p>
+                    </div>
+                </div>
+                
+                <!-- 时间线项目 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>1492: Un Momento Histórico</h3>
+                        <p>Los Reyes Católicos recibieron en Burgos a Cristóbal Colón tras su regreso del Nuevo Mundo. La ciudad se convirtió en un eje fundamental del Imperio Español, punto de partida de exploradores y conquistadores.</p>
+                    </div>
+                </div>
+                
+                <!-- 时间线项目 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Siglos XVI-XVIII: Legado Arquitectónico</h3>
+                        <p>Durante el Renacimiento, Burgos vio la construcción de monumentos emblemáticos como el Arco de Santa María y el Monasterio de Cartuja. Estos edificios siguen siendo símbolos de la ciudad e inspiración para nuestros helados.</p>
+                        <p>La tradición repostera de Burgos alcanzó su máximo esplendor en esta época, sentando las bases de nuestra artesanía heladera.</p>
+                    </div>
+                </div>
+                
+                <!-- 时间线项目 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Burgos Moderno</h3>
+                        <p>En 1984, la Catedral de Burgos fue declarada Patrimonio de la Humanidad por la UNESCO. Hoy, Burgos combina patrimonio histórico con vida moderna, siendo un importante centro cultural de Castilla y León.</p>
+                        <p>Nuestra heladería continúa esta tradición gastronómica, transformando los monumentos de Burgos en auténticas delicias comestibles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Landmark Products -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Monumentos Helados</h2>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="H1.PNG" alt="Helado de la Catedral">
+                    </div>
+                    <div class="product-info">
+                        <h3>Helado Catedral de Burgos</h3>
+                        <p>Base de vainilla con aguja de chocolate, reproduciendo los detalles góticos</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="H3.PNG" alt="Chocolate del Castillo">
+                    </div>
+                    <div class="product-info">
+                        <h3>Chocolate Castillo de Burgos</h3>
+                        <p>Elaborado con chocolate negro 72% y relleno de caramelo con sal marina</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="H2.PNG" alt="Helado del Arco de Santa María">
+                    </div>
+                    <div class="product-info">
+                        <h3>Helado Arco de Santa María</h3>
+                        <p>Doble sabor fresa y crema, decorado con láminas de oro</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 修改后的门店信息部分 -->
+    <section id="store">
+        <div class="container">
+            <div class="section-title">
+                <h2>Información de la Tienda</h2>
+            </div>
+            <div class="store-container">
+                <div class="store-hours">
+                    <h3>Horario de Apertura</h3>
+                    <ul class="hours-list">
+                        <li>
+                            <span>Lunes a Jueves</span>
+                            <span>10:00 - 20:00 <span class="status-indicator open"></span></span>
+                        </li>
+                        <li>
+                            <span>Viernes</span>
+                            <span>10:00 - 22:00 <span class="status-indicator open"></span></span>
+                        </li>
+                        <li>
+                            <span>Sábados</span>
+                            <span>09:00 - 23:00 <span class="status-indicator open"></span></span>
+                        </li>
+                        <li>
+                            <span>Domingos</span>
+                            <span>10:00 - 18:00 <span class="status-indicator open"></span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contacto</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Más Información</h3>
+                    <p>¿Tienes preguntas o necesitas pedidos para grupos? Contáctanos y nuestro equipo te responderá lo antes posible.</p>
+                    
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+34 947 123 456</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@heladosburgos.com</span>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+34 612 345 678</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Calle de la Paloma, 24, Burgos</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Envía tu Consulta</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>B-GO!</h3>
+                    <p>Transformando los monumentos de Burgos en experiencias dulces únicas, combinando tradición y creatividad.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#story">Nuestra Historia</a></li>
+                        <!-- 新增历史链接 -->
+                        <li><a href="#history">Historia de Burgos</a></li>
+                        <li><a href="#products">Productos</a></li>
+                        <li><a href="#store">Tienda</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Políticas</h4>
+                    <ul>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos de Uso</a></li>
+                        <li><a href="#">Configuración de Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 B-GO! Helados Monumentales de Burgos. Todos los derechos reservados | Artesanía Tradicional de Burgos</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for opening status indicator
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update opening status based on current time
+            const now = new Date();
+            const day = now.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+            const hours = now.getHours();
+            
+            const statusIndicators = document.querySelectorAll('.status-indicator');
+            
+            // Define opening hours: [start, end] for each day (0 = Sunday, 1 = Monday, etc.)
+            const openingHours = {
+                0: [10, 18],  // Sunday
+                1: [10, 20],  // Monday
+                2: [10, 20],  // Tuesday
+                3: [10, 20],  // Wednesday
+                4: [10, 22],  // Thursday
+                5: [9, 23],   // Friday
+                6: [9, 23]    // Saturday
+            };
+            
+            // Check if current time is within opening hours
+            let isOpen = false;
+            if (openingHours[day]) {
+                const [start, end] = openingHours[day];
+                isOpen = hours >= start && hours < end;
+            }
+            
+            // Update status indicators
+            statusIndicators.forEach(indicator => {
+                indicator.classList.add(isOpen ? 'open' : 'closed');
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
